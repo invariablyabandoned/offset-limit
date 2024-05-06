@@ -1,0 +1,12 @@
+{
+    "name": "Node.js",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        // Add the IDs of extensions you want installed when the container is created.
+        "extensions": ["dbaeumer.vscode-eslint"]
+    },
+    "remoteUser": "node"
+}
