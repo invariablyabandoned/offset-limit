@@ -16,17 +16,21 @@ function encodeOffsetLimitUrl(offsetLimitUrl) {
 }
 
 function decodeOffsetLimitUrl(encodedOffsetLimitUrl) {
-    const [plain, query] = encodedOffsetLimitUrl.split('?cursor=');
-    if(!query) return plain;
-    const decodedQuery = base64decode(query);
+    const [plain, cursor] = encodedOffsetLimitUrl.split('?cursor=');
+    if(!cursor) return plain;
+    const decodedQuery = base64decode(cursor);
     return `${plain}?${decodedQuery}`;
 }
 
 export async function obfuscatedFetch(url) {
+    // Remove obfuscation
     const requestUrl = decodeOffsetLimitUrl(url);
+
+    // Make request
     const pageResponse = await fetch(requestUrl);
     const pageData = await pageResponse.json();
 
+    // Add obfuscation
     return {
         data: pageData.results,
         meta: {

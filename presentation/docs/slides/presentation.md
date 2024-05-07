@@ -1,4 +1,4 @@
-# Why you shouldn't use offset/limit (visibly)
+# Why you shouldn't use offset/limit (visibly) 🥷
 
 Notes:
 
@@ -150,6 +150,9 @@ Notes:
 
 ## Demo: frontend JS examples 🕹️
 
+Notes:
+- JS files (1) to (3)
+
 
 
 ## Knex example implementation 🧑‍💻
@@ -251,6 +254,7 @@ Notes:
 ```js
 async function getItems(cursor) {
     const { offset } = decodeCursor(cursor);
+
     const results = await knex('items')
       .select('*')
       .offset(offset)
@@ -273,6 +277,12 @@ async function getItems(cursor) {
     }
 }
 ```
+
+Notes:
+- deobfuscate
+- query
+- obfuscate
+- The parts other than the query should be relatively easy to generalize and extract into functions
 
 
 
@@ -299,7 +309,15 @@ Notes:
 
 
 
-## So what?
+## A final demo 🕹️
+
+Notes:
+- JS file (4)
+- Also show example code from our repo if time
+
+
+
+## So what? 🤷
 
 - Before reaching for offset/limit consider how large your data sets will be.
 - When using offset/limit strongly consider obfuscating that fact so that you have the chance to migrate.

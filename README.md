@@ -22,7 +22,7 @@ npm ci
 node js/1_overt-offset-limit.mjs
 node js/2_link-offset-limit.mjs
 
-# https://developers.notion.com/reference/authentication
+# https://developers.notion.com/reference/get-users
 node --env-file js/.env js/3_cursor.mjs
 
 node js/4_obfuscated-offset-limit.mjs
