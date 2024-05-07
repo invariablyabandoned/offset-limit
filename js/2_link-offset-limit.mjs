@@ -1,8 +1,8 @@
-const BASE_URL = 'https://pokeapi.co/api/v2/'
+const BASE_URL = 'https://pokeapi.co/api/v2'
 const RECORDS_TO_FETCH = 100;
 
 const results = [];
-let requestUrl = `${BASE_URL}pokemon`;
+let requestUrl = `${BASE_URL}/pokemon`;
 let pageData;
 do {
     console.log(`Fetching ${requestUrl}`);

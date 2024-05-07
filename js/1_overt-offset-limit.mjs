@@ -1,12 +1,12 @@
 
-const BASE_URL = 'https://pokeapi.co/api/v2/'
+const BASE_URL = 'https://pokeapi.co/api/v2'
 const PAGE_SIZE = 20;
 const PAGES_TO_FETCH = 5;
 
 const results = [];
 for (let pageNumber = 0; pageNumber < PAGES_TO_FETCH; pageNumber++) {
     const offset = pageNumber * PAGE_SIZE;
-    const requestUrl = `${BASE_URL}pokemon?offset=${offset}&limit=${PAGE_SIZE}`;
+    const requestUrl = `${BASE_URL}/pokemon?offset=${offset}&limit=${PAGE_SIZE}`;
     console.log(`Fetching ${requestUrl}`);
     const response = await fetch(requestUrl);
     const resultWrapper = await response.json();
