@@ -5,6 +5,9 @@ create table large_sample_dataset (
   created_at timestamp not null
 );
 
+-- Add index on created_at (for later examples)
+create index idx_large_sample_dataset_created_at on large_sample_dataset(created_at);
+
 -- Insert 100 million rows
 insert into large_sample_dataset (name, created_at)
   select 

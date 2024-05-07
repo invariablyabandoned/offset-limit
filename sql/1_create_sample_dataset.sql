@@ -5,6 +5,9 @@ create table sample_dataset (
   created_at timestamp not null
 );
 
+-- Add index on created_at (important for later examples)
+create index idx_sample_dataset_created_at on sample_dataset(created_at);
+
 -- Insert 1 million rows
 insert into sample_dataset (name, created_at)
   select 
