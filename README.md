@@ -2,7 +2,7 @@
 
 // TODO link the published blog article here
 
-Code demos accompanying the [Why you shouldn't use offset/limit (visibly)](https://ghost.home.demery.net) blog article
+Code demos accompanying the [Why you shouldn't use offset/limit (visibly)](https://invariablyabandoned.com) blog article
 
 ## Contents
 
@@ -27,3 +27,7 @@ node --env-file js/.env js/3_cursor.mjs
 
 node js/4_obfuscated-offset-limit.mjs
 ```
+
+## Slides
+
+A presentation was also created to go along with the blog article and the details can be found in the `presentation` folder
