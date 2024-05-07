@@ -17,7 +17,7 @@ do {
     const pageResponse = await fetch(requestUrl, REQUEST_OPTIONS);
     pageData = await pageResponse.json();
     results.push(...pageData.results);
-    requestUrl = `${BASE_URL}/users?page_size=${PAGE_SIZE}&start_cursor=${pageData.nextCursor}`;
-} while (pageData.next !== null && results.length < RECORDS_TO_FETCH);
+    requestUrl = `${BASE_URL}/users?page_size=${PAGE_SIZE}&start_cursor=${pageData.next_cursor}`;
+} while (pageData.next_cursor && results.length < RECORDS_TO_FETCH);
 
 console.log(`${results.length} users fetched. Starting with ${results[0].name} and ending with ${results[results.length - 1].name}`);
