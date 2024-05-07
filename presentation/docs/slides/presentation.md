@@ -43,7 +43,7 @@ Notes:
 
 
 
-## Knex example implementation
+## Knex example implementation 🧑‍💻
 
 ```js
 function getItems(offset, limit) {
@@ -56,7 +56,7 @@ function getItems(offset, limit) {
 
 
 
-## How it works
+## How it works 🧬
 
 ![Single page diagram](../../images/offset-limit.png)
 
@@ -70,7 +70,7 @@ Notes:
 
 
 
-## Reasoning about performance
+## Reasoning about performance 🏎️
 
 ![Multiple pages diagram](../../images/offset-limit-multiple-pages.png)
 
@@ -85,7 +85,7 @@ Notes:
 
 
 
-## Demo: Some real database numbers
+## Demo: Some real database numbers 🕹️
 
 Notes:
 
@@ -93,7 +93,7 @@ Notes:
 
 
 
-## Demo: Takeaways
+## Demo: Takeaways 📋
 
 - Postgres can scan really fast
 - The performance of an offset/limit query scales linearly
@@ -139,7 +139,7 @@ Notes:
 
 
 
-## Limitations compared to offset/limit
+## Limitations compared to offset/limit 📉
 
 - Needs to be sorted (and consistently between pages)
 - Need an index to get any improvement over offset/limit
@@ -148,11 +148,11 @@ Notes:
 
 
 
-## Demo: frontend JS examples
+## Demo: frontend JS examples 🕹️
 
 
 
-## Knex example implementation
+## Knex example implementation 🧑‍💻
 
 ```js
 async function getItems(cursor) {
@@ -183,7 +183,7 @@ async function getItems(cursor) {
 
 
 
-## On sorting arguments
+## On sorting parameters 🔝
 
 ```js
 async function getItems(cursor, sort) {
@@ -197,7 +197,7 @@ async function getItems(cursor, sort) {
 
 
 
-## How it works
+## How it works 🧬
 
 - One lookup to get the start point (hopefully indexed)
 - One scan to get the data
@@ -211,7 +211,7 @@ Notes:
 
 
 
-## Demo: More real postgres numbers
+## Demo: More real postgres numbers 🕹️
 
 Notes:
 
@@ -219,16 +219,19 @@ Notes:
 
 
 
-## Demo: Takeaways
+## Demo: Takeaways 📋
 
 - As expected no significant difference for small datasets or early pages
 - Orders of magnitude faster for late pages of large datasets
 
 
 
-## The real problem with offset/limit
+## Story Time 📖
+
+### The real problem with offset/limit
 
 https://pokeapi.co/api/v2/pokemon?offset=40&limit=20
+
 
 Notes:
 
@@ -300,3 +303,13 @@ Notes:
 
 - Before reaching for offset/limit consider how large your data sets will be.
 - When using offset/limit strongly consider obfuscating that fact so that you have the chance to migrate.
+
+
+
+# Thanks for your attention 🫡
+
+## Resources
+
+- All the example code: https://github.com/invariablyabandoned/offset-limit
+- GraphQL pagination docs: https://graphql.org/learn/pagination/
+- JSON API cursor pagination docs: https://jsonapi.org/profiles/ethanresnick/cursor-pagination/
