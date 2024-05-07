@@ -159,11 +159,11 @@ Notes:
 
 ```js
 async function getItems(cursor) {
-    const { afterId } = decodeCursor(cursor);
+    const { afterName } = decodeCursor(cursor);
     const results = knex('items')
       .select('*')
-      .orderBy('name', 'desc')
-      .where('id', '>', afterId)
+      .orderBy('name', 'asc')
+      .where('id', '>', afterName)
       .limit(PAGE_SIZE + 1);
     
     if(results.length > PAGE_SIZE) {
@@ -171,7 +171,7 @@ async function getItems(cursor) {
         data: results.slice(0, PAGE_SIZE),
         meta: {
           nextCursor: encodeCursor({ 
-            afterId: results[PAGE_SIZE].id
+            afterName: results[PAGE_SIZE].name
           }),
         }
       }
