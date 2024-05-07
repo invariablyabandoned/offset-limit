@@ -9,7 +9,6 @@ docker run --rm \
     -v ./docs/slides:/reveal/docs/slides \
     -v ./images:/reveal/images \
     -e TITLE='Offset Limit' \
-    -e SHOW_NOTES_FOR_PRINTING='true' \
     -p 8000:8000 -p 35729:35729 \
     cloudogu/reveal.js:dev
 ```
